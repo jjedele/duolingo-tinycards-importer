@@ -10,6 +10,7 @@ import org.apache.http.entity.mime.MultipartEntityBuilder;
 import java.io.File;
 import java.io.IOException;
 import java.net.URI;
+import java.nio.charset.Charset;
 
 /**
  * API for the DuoLingo TinyCards application.
@@ -71,6 +72,7 @@ public class TinyCardsAPI {
                            Deck deck) throws IOException {
         MultipartEntityBuilder entityBuilder = MultipartEntityBuilder.create();
         entityBuilder.setContentType(ContentType.MULTIPART_FORM_DATA);
+        entityBuilder.setCharset(Charset.forName("UTF-8"));
         entityBuilder.addTextBody("name", name);
         entityBuilder.addTextBody("description", description);
         entityBuilder.addTextBody("private", Boolean.toString(isPrivate));
