@@ -20,6 +20,7 @@ import java.io.PrintWriter;
 import java.io.StringWriter;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 public class Controller {
 
@@ -82,6 +83,20 @@ public class Controller {
             alert.setContentText("Vocabulary CSV must be loaded first.");
             alert.showAndWait();
             return;
+        }
+
+        if (previewTable.getItems().size() > 150) {
+            Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+            alert.setTitle("Card Limit exceeded");
+            alert.setHeaderText("Card Limit exceeded");
+            alert.setContentText("DuoLingo natively supports only 150 cards per deck. You can continue to create a bigger deck, but I advise to split your file over multiple decks.");
+
+            Optional<ButtonType> result = alert.showAndWait();
+            if (result.get() == ButtonType.OK){
+                // ... user chose OK
+            } else {
+                return;
+            }
         }
 
         try {
