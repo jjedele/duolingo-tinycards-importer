@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="de.jjedele.tcimporter.ui.Controller">
+   <children>
+      <VBox prefHeight="400.0" prefWidth="600.0">
+         <children>
+            <GridPane>
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <Label text="DuoLingo user name" />
+                  <Label text="DuoLingo password" GridPane.rowIndex="1" />
+                  <TextField fx:id="username" GridPane.columnIndex="1" />
+                  <PasswordField fx:id="password" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                  <Label text="Deck name" GridPane.rowIndex="2" />
+                  <TextField fx:id="deckName" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                  <HBox prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                     <children>
+                        <Button mnemonicParsing="false" onAction="#handleLoadCSVButtonPressed" text="Load CSV" />
+                        <Button mnemonicParsing="false" onAction="#handleImportButtonPressed" style="-fx-background-color: red;" text="Import" textFill="#141414" />
+                     </children>
+                  </HBox>
+               </children>
+            </GridPane>
+            <Separator prefWidth="200.0" />
+            <TableView fx:id="previewTable" prefHeight="307.0" prefWidth="600.0">
+              <columns>
+                <TableColumn prefWidth="75.0" text="Language 1" />
+                <TableColumn prefWidth="75.0" text="Language 2" />
+              </columns>
+            </TableView>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>
