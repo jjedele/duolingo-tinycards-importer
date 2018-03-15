@@ -78,14 +78,14 @@ public class TinyCardsAPI {
         entityBuilder.addTextBody("private", Boolean.toString(isPrivate));
         entityBuilder.addTextBody("shareable", Boolean.toString(shareable));
         entityBuilder.addTextBody("cards", JsonMapper.INSTANCE.writeValueAsString(deck));
-        final String emptyJson = "[]";
-        entityBuilder.addTextBody("ttsLanguages", emptyJson);
-        entityBuilder.addTextBody("blacklistedSideIndices", emptyJson);
-        entityBuilder.addTextBody("blacklistedQuestionTypes", emptyJson);
-        entityBuilder.addTextBody("gradingModes", emptyJson);
+        final String emptyJsonArray = "[]";
+        entityBuilder.addTextBody("ttsLanguages", emptyJsonArray);
+        entityBuilder.addTextBody("blacklistedSideIndices", emptyJsonArray);
+        entityBuilder.addTextBody("blacklistedQuestionTypes", emptyJsonArray);
+        entityBuilder.addTextBody("gradingModes", emptyJsonArray);
         entityBuilder.addTextBody("fromLanguage", "en");
         entityBuilder.addBinaryBody("imageFile",
-                new File("square.png"),
+                getClass().getResourceAsStream("/default_cover.png"),
                 ContentType.create("image/png"),
                 "cover.png");
 
