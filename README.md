@@ -1,6 +1,7 @@
 # duolingo-tinycards-importer
 Batch import vocabulary from CSV files into the TinyCards application of DuoLingo.
 
+[![Build Status](https://travis-ci.org/jjedele/duolingo-tinycards-importer.svg?branch=master)](https://travis-ci.org/jjedele/duolingo-tinycards-importer)
 
 ## Download
 Download the [latest release](https://github.com/jjedele/duolingo-tinycards-importer/releases/tag/untagged-c5d5e26acbac975329ba).
